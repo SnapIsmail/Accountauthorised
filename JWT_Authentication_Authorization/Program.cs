@@ -9,7 +9,11 @@ using Microsoft.OpenApi.Models;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
-
+//cros
+builder.Services.AddCors(p => p.AddPolicy("corsapp", builder =>
+{
+    builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
+}));
 // Add services to the container.
 builder.Services.AddDbContext<JwtContext>
     (options => options.UseSqlServer(builder.Configuration.GetConnectionString("UserapiConnectionString")));
@@ -71,15 +75,15 @@ builder.Services.AddSwaggerGen(opt =>
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
     app.UseSwagger();
     app.UseSwaggerUI();
-}
+
 
 app.UseHttpsRedirection();
 app.UseAuthentication();
+app.UseCors("corsapp");
 app.UseAuthorization();
+
 
 app.MapControllers();
 
