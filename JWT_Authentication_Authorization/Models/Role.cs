@@ -1,4 +1,4 @@
-﻿namespace JWT_Authentication_Authorization.Models
+namespace JWT_Authentication_Authorization.Models
 {
     public class Role
     {
