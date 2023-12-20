@@ -1,4 +1,4 @@
-﻿using JWT_Authentication_Authorization.Models;
+using JWT_Authentication_Authorization.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace JWT_Authentication_Authorization.Context
