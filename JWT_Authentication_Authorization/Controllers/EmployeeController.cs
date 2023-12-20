@@ -1,4 +1,4 @@
-﻿using JWT_Authentication_Authorization.Interfaces;
+using JWT_Authentication_Authorization.Interfaces;
 using JWT_Authentication_Authorization.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -8,7 +8,7 @@ using System.Data;
 
 namespace JWT_Authentication_Authorization.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("Employee")]
     [ApiController]
 
     public class EmployeesController : ControllerBase
